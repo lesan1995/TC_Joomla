@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="ArticlesNewPage">
+	<Element id="tbTitle">
+		<By>cssSelector</By>
+		<Address>input[id='jform_title']</Address>	
+	</Element>
+	<Element id="btnCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//span</Address>	
+	</Element>
+	<Element id="lbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="ifContent">
+		<By>cssSelector</By>
+		<Address>div[id='mceu_93']>iframe[id='jform_articletext_ifr']</Address>	
+	</Element>
+	<Element id="tbContent">
+		<By>cssSelector</By>
+		<Address>body[id='tinymce']</Address>	
+	</Element>
+	<Element id="btnSave">
+		<By>cssSelector</By>
+		<Address>div[id$='apply']>button</Address>	
+	</Element>
+	<Element id="btnSaveAndClose">
+		<By>cssSelector</By>
+		<Address>div[id$='save']>button</Address>	
+	</Element>
+	<Element id="btnSaveAndNew">
+		<By>cssSelector</By>
+		<Address>div[id$='save-new']>button</Address>	
+	</Element>
+	<Element id="btnCancel">
+		<By>cssSelector</By>
+		<Address>div[id$='cancel']>button</Address>	
+	</Element>
+	<Element id="btnHelp">
+		<By>cssSelector</By>
+		<Address>div[id$='help']>button</Address>	
+	</Element>
+	<Element id="btnStatus">
+		<By>xpath</By>
+		<Address>//div[@id='jform_state_chzn']/a</Address>	
+	</Element>
+	<Element id="lbStatus">
+		<By>xpath</By>
+		<Address>//div[@id='jform_state_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="btnAccess">
+		<By>xpath</By>
+		<Address>//div[@id='jform_access_chzn']/a</Address>	
+	</Element>
+	<Element id="lbAccess">
+		<By>xpath</By>
+		<Address>//div[@id='jform_access_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="btnImage">
+		<By>cssSelector</By>
+		<Address>div[id='mceu_54']>button</Address>	
+	</Element>
+	<Element id="ifImage">
+		<By>xpath</By>
+		<Address>//div[@class='mce-container mce-panel mce-floatpanel mce-window mce-in']//div[@class='mce-container-body mce-window-body mce-abs-layout']/iframe[1]</Address>	
+	</Element>
+	<Element id="selectImage">
+		<By>cssSelector</By>
+		<Address>a[title='{0}']</Address>	
+	</Element>
+	<Element id="btnInsertImage">
+		<By>xpath</By>
+		<Address>//button[text()='Insert']</Address>	
+	</Element>
+	<Element id="fsUpload">
+		<By>xpath</By>
+		<Address>//iframe[@id='imageframe' or @name='imageframe'][1]</Address>	
+	</Element>
+	<Element id="formUpload">
+		<By>xpath</By>
+		<Address>//form[@id='imageForm']</Address>	
+	</Element>
+	<Element id="tbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//input</Address>	
+	</Element>
+	
+</Page>

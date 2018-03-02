@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="BannersPage">
+	<Element id="toolBar">
+		<By>cssSelector</By>
+		<Address>div[id='toolbar-{0}']</Address>	
+	</Element>
+	<Element id="messageBanner">
+		<By>cssSelector</By>
+		<Address>div[class='alert-message']</Address>	
+	</Element>
+	<Element id="tbSearch">
+		<By>cssSelector</By>
+		<Address>#filter_search</Address>	
+	</Element>
+	<Element id="btnSearch">
+		<By>cssSelector</By>
+		<Address>button>span[class*='search']</Address>	
+	</Element>
+	<Element id="btnClear">
+		<By>xpath</By>
+		<Address>//button[contains(text(),'Clear')]</Address>	
+	</Element>
+	<Element id="resultSearch">
+		<By>cssSelector</By>
+		<Address>table>tbody>tr>td</Address>	
+	</Element>
+	<Element id="categoryInTableWithTitle">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Name')]/preceding-sibling::th)+1]//div[contains(text(),'Category')]</Address>	
+	</Element>
+	<Element id="nameInTableWithTitle">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Name')]/preceding-sibling::th)+1]//div[contains(text(),'Category')]/preceding-sibling::a[1]</Address>	
+	</Element>
+	<Element id="clientInTableWithTitle">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Client')]/preceding-sibling::th)+1]</Address>	
+	</Element>
+	<Element id="icUnpublishArticleInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//span[@class='icon-unpublish']</Address>	
+	</Element>
+	<Element id="btnNext">
+		<By>cssSelector</By>
+		<Address>a[data-original-title='Next']</Address>	
+	</Element>
+		<Element id="cbBannerInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//input[@type='checkbox']</Address>	
+	</Element>
+	<Element id="icStatusInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Status')]/preceding-sibling::th)+1]//span[@class='icon-{1}']</Address>	
+	</Element>
+	<Element id="btnSearchTools">
+		<By>xpath</By>
+		<Address>//button[contains(.,'Search Tools')]</Address>	
+	</Element>
+	<Element id="btnStatus">
+		<By>xpath</By>
+		<Address>//div[@id='filter_published_chzn']/a</Address>	
+	</Element>
+	<Element id="lbStatus">
+		<By>xpath</By>
+		<Address>//div[@id='filter_published_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="btnCategory">
+		<By>xpath</By>
+		<Address>//div[@id='filter_category_id_chzn']/a</Address>	
+	</Element>
+	<Element id="lbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='filter_category_id_chzn']/div//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="tbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='filter_category_id_chzn']//input</Address>	
+	</Element>
+	<Element id="btnClient">
+		<By>xpath</By>
+		<Address>//div[@id='filter_client_id_chzn']/a</Address>	
+	</Element>
+	<Element id="lbClient">
+		<By>xpath</By>
+		<Address>//div[@id='filter_client_id_chzn']/div//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="tbClient">
+		<By>xpath</By>
+		<Address>//div[@id='filter_client_id_chzn']//input</Address>	
+	</Element>
+	<Element id="iconLockBanner">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::td//span[@class='icon-checkedout']</Address>	
+	</Element>
+		<Element id="btnListLimit">
+		<By>cssSelector</By>
+		<Address>div[id='list_limit_chzn']>a</Address>	
+	</Element>
+	<Element id="lbListLimit">
+		<By>xpath</By>
+		<Address>//div[@id='list_limit_chzn']/div//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="rowInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr</Address>	
+	</Element>
+	<Element id="inputListLimit">
+		<By>xpath</By>
+		<Address>//div[@id='list_limit_chzn']//input</Address>	
+	</Element>
+	<Element id="idXpathInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'ID')]/preceding-sibling::th)+1]</Address>	
+	</Element>
+	<Element id="idInTable">
+		<By>cssSelector</By>
+		<Address>table>tbody>tr:nth-of-type({0})>td:last-child</Address>	
+	</Element>
+	<Element id="linkIDColumn">
+		<By>xpath</By>
+		<Address>//table//th[contains(.,'ID')]/a</Address>	
+	</Element>
+	<Element id="menuTopLeft">
+		<By>xpath</By>
+		<Address>//ul[@id='submenu']//a[text()='{0}']</Address>	
+	</Element>
+	
+</Page>

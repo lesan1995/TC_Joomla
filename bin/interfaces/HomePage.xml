@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="HomePage">
+	<Element id="itemMenuGoHome">
+		<By>cssSelector</By>
+		<Address>a[class='admin-logo']</Address>	
+	</Element>
+	<Element id="menuTopLeftLV1">
+		<By>xpath</By>
+		<Address>//li[@class='dropdown']/a[contains(.,'{0}')]</Address>	
+	</Element>
+	<Element id="menuTopLeftLV2">
+		<By>xpath</By>
+		<Address>//li[@class='dropdown open']/ul/li/a[text()='{0}']</Address>	
+	</Element>
+	<Element id="menuTopLeftLV3">
+		<By>xpath</By>
+		<Address>//ul[@id='nav-empty']/li[contains(.,'{0}')]</Address>	
+	</Element>
+	<Element id="menuTopLeftLV3Link">
+		<By>xpath</By>
+		<Address>//li[contains(@class,'dropdown')]/a[contains(.,'{0}')]/ancestor::li/ul/li/a[text()='{1}']/following-sibling::ul/li/a[text()='{2}']</Address>	
+	</Element>
+		<Element id="itemMenuGoJoomla">
+		<By>cssSelector</By>
+		<Address>ul[id='menu'] ~ a[href$='joomla/']</Address>	
+	</Element>
+	<Element id="menuUserLV1">
+		<By>xpath</By>
+		<Address>//li[@class='dropdown']/a[contains(.,'User Menu')]</Address>	
+	</Element>
+	<Element id="menuUserLV2">
+		<By>xpath</By>
+		<Address>//li[@class='dropdown open']/a[contains(.,'User Menu')]//following-sibling::ul/li[contains(.,'{0}')]</Address>	
+	</Element>
+	<Element id="itemMenuUserLogged">
+		<By>xpath</By>
+		<Address>//span/span[@class='icon-user']/following-sibling::strong</Address>	
+	</Element>
+	<Element id="btnReadMessage">
+		<By>xpath</By>
+		<Address>//a[contains(text(),'Read Messages')]</Address>	
+	</Element>
+</Page>

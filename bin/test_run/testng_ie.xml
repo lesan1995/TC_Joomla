@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuitJoomlaIE">
+  <listeners>
+  	<listener class-name="common.Listener"></listener>
+  </listeners>
+  <test name="TestIE" >
+	  <parameter name="browser" value="ie"/>
+	  <parameter name="url" value="http://192.168.188.150/joomla/administrator/"/>
+	  <parameter name="timeOutElement" value="5"/>
+	  <parameter name="timeOutPage" value="30"/>
+       <classes>
+			<class name="test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_002_Verify_user_can_edit_an_article" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_003_User_can_publish_an_unpublished_article" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_004_Verify_user_can_unpublish_a_published_article" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_005_User_can_move_an_article_to_the_archive" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_006_Verify_user_can_check_in_an_article" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_007_Verify_user_an_move_an_article_to_trash_section" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_008_Verify_user_can_access_articles_help_section" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_009_User_can_search_for_articles_using_the_filter_text_field" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_010_Verify_user_can_search_for_articles_using_the_filter_dropdown_lists" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_011_Verify_user_can_sort_the_article_table_by_ID_column" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_012_Verify_user_can_paging_the_articles_using_the_paging_control" />
+			<class name="test_case.TC_JOOMLA_ARTICLE_013_Verify_user_can_add_image_to_articles_content" /> 
+			<class name="test_case.TC_JOOMLA_ARTICLE_014_User_can_change_the_order_of_articles_using_the_ordering_column"/>
+			<class name="test_case.TC_JOOMLA_ARTICLE_015_Verify_user_can_change_the_status_of_articles_using_the_Status_column"/>
+			<class name="test_case.TC_JOOMLA_ARTICLE_016_Verify_user_can_change_the_feature_property_of_articles_using_the_Featured_column"/> 
+			<class name="test_case.TC_JOOMLA_ARTICLE_017_Verify_user_can_create_a_new_article_with_Public_Access_Level_property"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_001_Verify_that_user_can_create_new_banner"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_002_Verify_that_user_can_create_new_banner"/> 
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_003_Verify_that_user_can_create_a_new_banner_with_unpublished_status"/> 
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_004_User_can_unpublish_a_banner"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_005_Verify_that_user_can_archive_a_banner"/> 
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_006_Verify_that_user_can_send_a_banner_to_trash"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_007_Verify_that_user_can_browse_Banner_help_page"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_008_User_can_search_a_banner_by_using_filter_textbox"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_009_User_can_search_a_banner_by_using_filter_dropdown_lists"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_010_Verify_that_user_can_check_in_a_banner"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_011_Verify_that_user_can_create_many_banners_by_using_Save_And_New_button"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_012_Verify_that_user_can_browse_New_Banner_help_page_in_New_banner_page"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_013_User_can_create_a_new_banner_by_using_Save_as_Copy_button"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_014_Verify_that_user_cannot_create_a_new_banner_without_entering_the_name_of_the_banner"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_015_Verify_that_user_can_change_the_quantity_of_items_displayed_in_banner_table"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_016_Verify_that_user_can_sort_items_displayed_in_banner_table_by_ID"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_017_Verify_that_user_can_access_Banner_clients_page_while_browsing_Banner_page"/>
+       </classes>
+  </test>
+</suite>

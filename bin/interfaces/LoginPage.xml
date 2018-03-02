@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="LoginPage">
+	<Element id="tbUserName">
+		<By>cssSelector</By>
+		<Address>input[name*='username']</Address>
+	</Element>
+	<Element id="tbPassword">
+		<By>cssSelector</By>
+		<Address>input[name*='pass']</Address>
+	</Element>
+	<Element id="btnLogin">
+		<By>cssSelector</By>
+		<Address>button[class*='login']</Address>
+	</Element>
+	<Element id="btnForgotUserName">
+		<By>cssSelector</By>
+		<Address>input[name*='username'] ~ a</Address>
+	</Element>
+	<Element id="btnForgotPassword">
+		<By>cssSelector</By>
+		<Address>input[name*='pass'] ~ a</Address>
+	</Element>
+</Page>

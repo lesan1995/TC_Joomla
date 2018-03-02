@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="BannersClientsPage">
+	<Element id="toolBar">
+		<By>cssSelector</By>
+		<Address>div[id='toolbar-{0}']</Address>	
+	</Element>
+	<Element id="messageClient">
+		<By>cssSelector</By>
+		<Address>div[class='alert-message']</Address>	
+	</Element>
+	<Element id="tbSearch">
+		<By>cssSelector</By>
+		<Address>#filter_search</Address>	
+	</Element>
+	<Element id="btnSearch">
+		<By>cssSelector</By>
+		<Address>button>span[class*='search']</Address>	
+	</Element>
+	<Element id="btnClear">
+		<By>xpath</By>
+		<Address>//button[contains(text(),'Clear')]</Address>	
+	</Element>
+	<Element id="resultSearch">
+		<By>cssSelector</By>
+		<Address>table>tbody>tr>td</Address>	
+	</Element>
+
+
+</Page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="BannersCategoriesNewPage">
+	<Element id="tbTitle">
+		<By>cssSelector</By>
+		<Address>#jform_title</Address>	
+	</Element>
+	<Element id="toolBar">
+		<By>cssSelector</By>
+		<Address>div[id='toolbar-{0}']>button</Address>	
+	</Element>
+</Page>

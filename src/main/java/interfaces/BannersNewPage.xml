@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="BannersNewPage">
+	<Element id="toolBar">
+		<By>cssSelector</By>
+		<Address>div[id='toolbar-{0}']>button</Address>	
+	</Element>
+	<Element id="tbName">
+		<By>cssSelector</By>
+		<Address>#jform_name</Address>	
+	</Element>
+	<Element id="btnCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//span</Address>	
+	</Element>
+	<Element id="lbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="tabBannerDetails">
+		<By>xpath</By>
+		<Address>//a[text()='Banner Details']</Address>	
+	</Element>
+	<Element id="tabDetails">
+		<By>xpath</By>
+		<Address>//a[text()='Details']</Address>	
+	</Element>
+	<Element id="btnClient">
+		<By>xpath</By>
+		<Address>//div[@id='jform_cid_chzn']//a</Address>	
+	</Element>
+	<Element id="lbClient">
+		<By>xpath</By>
+		<Address>//div[@id='jform_cid_chzn']//li[text()='{0}']</Address>	
+	</Element>
+	<Element id="tbClient">
+		<By>xpath</By>
+		<Address>//div[@id='jform_cid_chzn']//input</Address>	
+	</Element>
+	<Element id="tbCategory">
+		<By>xpath</By>
+		<Address>//div[@id='jform_catid_chzn']//input</Address>	
+	</Element>
+	<Element id="messageBanner">
+		<By>cssSelector</By>
+		<Address>div[class='alert-message']</Address>	
+	</Element>
+	<Element id="btnStatus">
+		<By>xpath</By>
+		<Address>//div[@id='jform_state_chzn']/a</Address>	
+	</Element>
+	<Element id="lbStatus">
+		<By>xpath</By>
+		<Address>//div[@id='jform_state_chzn']//li[contains(text(),'{0}')]</Address>	
+	</Element>
+</Page>

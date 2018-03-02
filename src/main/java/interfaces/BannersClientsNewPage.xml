@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page name="BannersClientsNewPage">
+	<Element id="tbName">
+		<By>cssSelector</By>
+		<Address>#jform_name</Address>	
+	</Element>
+	<Element id="tbContactName">
+		<By>cssSelector</By>
+		<Address>#jform_contact</Address>	
+	</Element>
+	<Element id="tbContactEmail">
+		<By>cssSelector</By>
+		<Address>#jform_email</Address>	
+	</Element>
+	<Element id="toolBar">
+		<By>cssSelector</By>
+		<Address>div[id='toolbar-{0}']>button</Address>	
+	</Element>
+</Page>
