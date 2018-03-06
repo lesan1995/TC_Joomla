@@ -29,6 +29,10 @@ public final class Elements {
 	public final static class ArticlesPage{
 		public static String toolBar="toolBar";
 		public static String btnNew="new";
+		public static String btnEdit = "edit";
+		public static String btnPublish = "publish";
+		public static String btnUnpublish = "unpublish";
+		
 		public static String messageArticle="messageArticle";
 		public static String tbSearch = "tbSearch";
 		public static String btnSearch = "btnSearch";
@@ -36,11 +40,11 @@ public final class Elements {
 		public static String cbArticleInTable = "cbArticleInTable";
 		public static String btnNext = "btnNext";
 		public static String btnBackWard = "btnBackWard";
-		public static String btnEdit = "edit";
+		
 		public static String btnClear = "btnClear";
-		public static String btnPublish = "publish";
+		
 		public static String icPublishArticleInTable = "icPublishArticleInTable";
-		public static String btnUnpublish = "unpublish";
+		
 		public static String icUnpublishArticleInTable = "icUnpublishArticleInTable";
 		
 		public static String btnArchive = "archive";
@@ -111,28 +115,21 @@ public final class Elements {
 	public final static class BannersPage{
 		public static String toolBar="toolBar";
 		public static String btnNew="new";
+		public static String btnUnpublish="unpublish";
+		public static String btnArchive="archive";
+		public static String btnTrash="trash";
+		public static String btnCheckIn="checkin";
+		public static String btnHelp="help";
+		
 		public static String messageBanner="messageBanner";
+		
+		public static String tbSearch="tbSearch";
 		public static String btnSearch="btnSearch";
 		public static String btnClear="btnClear";
-		public static String resultSearch="resultSearch";
-		public static String nameInTable="nameInTableWithTitle";
-		public static String categoryInTable="categoryInTableWithTitle";
-		public static String clientInTable="clientInTableWithTitle";
-		public static String tbSearch="tbSearch";
-		public static String icUnpublishArticleInTable = "icUnpublishArticleInTable";
-		public static String btnNext = "btnNext";
-		public static String cbBannerInTable = "cbBannerInTable";
-		public static String btnUnpublish="unpublish";
-		public static String icStatusInTable="icStatusInTable";
-		public static String btnArchive="archive";
 		
 		public static String btnSearchTools = "btnSearchTools";
 		public static String btnStatus = "btnStatus";
 		public static String lbStatus = "lbStatus";
-		
-		public static String btnTrash="trash";
-		public static String btnHelp="help";
-		
 		public static String btnCategory = "btnCategory";
 		public static String lbCategory = "lbCategory";
 		public static String tbCategory = "tbCategory";
@@ -140,8 +137,24 @@ public final class Elements {
 		public static String lbClient = "lbClient";
 		public static String tbClient = "tbClient";
 		
-		public static String btnCheckIn="checkin";
+		
+		public static String resultSearch="resultSearch";
+		public static String nameInTable="nameInTableWithTitle";
+		public static String categoryInTable="categoryInTableWithTitle";
+		public static String clientInTable="clientInTableWithTitle";
+		public static String cbBannerInTable = "cbBannerInTable";
+		public static String icUnpublishArticleInTable = "icUnpublishArticleInTable";
+		public static String icStatusInTable="icStatusInTable";
 		public static String iconLockBanner="iconLockBanner";
+		
+		public static String btnNext = "btnNext";
+		
+		
+		
+
+		
+		
+		
 		
 		public static String btnListLimit="btnListLimit";
 		public static String lbListLimit="lbListLimit";

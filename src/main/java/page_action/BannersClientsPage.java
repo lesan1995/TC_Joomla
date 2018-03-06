@@ -63,7 +63,7 @@ public class BannersClientsPage extends BasePage{
 		 * @return
 		 */
 		public boolean messageClient(String content) {
-			return read(readElement(Elements.BannersClientsPage.messageClient)).contains(content);
+			return read(readElement(Elements.BannersClientsPage.messageClient)).equals(content);
 		}
 		/**
 		 * Check result search with content

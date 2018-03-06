@@ -149,7 +149,7 @@ public class ArticlesNewPage extends BasePage {
 			focus(readElement(Elements.ArticlesNewPage.fsUpload));
 			swithTo.frame(readElement(Elements.ArticlesNewPage.fsUpload));
 			
-			clickJavacript(readElement(Elements.ArticlesNewPage.selectImage,title));
+			click(readElement(Elements.ArticlesNewPage.selectImage,title));
 			swithTo.Default();
 		}
 	}

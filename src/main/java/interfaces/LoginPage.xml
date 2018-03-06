@@ -12,12 +12,4 @@
 		<By>cssSelector</By>
 		<Address>button[class*='login']</Address>
 	</Element>
-	<Element id="btnForgotUserName">
-		<By>cssSelector</By>
-		<Address>input[name*='username'] ~ a</Address>
-	</Element>
-	<Element id="btnForgotPassword">
-		<By>cssSelector</By>
-		<Address>input[name*='pass'] ~ a</Address>
-	</Element>
 </Page>

@@ -4,6 +4,10 @@
 		<By>cssSelector</By>
 		<Address>div[id='toolbar-{0}']</Address>	
 	</Element>
+	<Element id="messageArticle">
+		<By>cssSelector</By>
+		<Address>div[class='alert-message']</Address>	
+	</Element>
 	<Element id="tbSearch">
 		<By>cssSelector</By>
 		<Address>input[id*='search']</Address>	
@@ -12,17 +16,25 @@
 		<By>cssSelector</By>
 		<Address>button>span[class*='search']</Address>	
 	</Element>
-	<Element id="btnNext">
-		<By>cssSelector</By>
-		<Address>a[data-original-title='Next']</Address>	
+	<Element id="btnSearchTools">
+		<By>xpath</By>
+		<Address>//button[contains(.,'Search Tools')]</Address>	
 	</Element>
 	<Element id="btnClear">
 		<By>xpath</By>
 		<Address>//button[contains(text(),'Clear')]</Address>	
 	</Element>
-	<Element id="btnSearchTools">
+	<Element id="btnListLimit">
+		<By>cssSelector</By>
+		<Address>div[id='list_limit_chzn']>a</Address>	
+	</Element>
+	<Element id="lbListLimit">
 		<By>xpath</By>
-		<Address>//button[contains(.,'Search Tools')]</Address>	
+		<Address>//div[@id='list_limit_chzn']/div//li[contains(text(),'{0}')]</Address>	
+	</Element>
+	<Element id="inputListLimit">
+		<By>xpath</By>
+		<Address>//div[@id='list_limit_chzn']//input</Address>	
 	</Element>
 	<Element id="btnStatus">
 		<By>xpath</By>
@@ -31,34 +43,6 @@
 	<Element id="lbStatus">
 		<By>xpath</By>
 		<Address>//div[@id='filter_published_chzn']//li[contains(text(),'{0}')]</Address>	
-	</Element>
-	<Element id="resultSearch">
-		<By>cssSelector</By>
-		<Address>table>tbody>tr>td</Address>	
-	</Element>
-	<Element id="cbArticleInTable">
-		<By>xpath</By>
-		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//input[@type='checkbox']</Address>	
-	</Element>
-	<Element id="icPublishArticleInTable">
-		<By>xpath</By>
-		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//span[@class='icon-publish']</Address>	
-	</Element>
-	<Element id="icUnpublishArticleInTable">
-		<By>xpath</By>
-		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//span[@class='icon-unpublish']</Address>	
-	</Element>
-	<Element id="messageArticle">
-		<By>cssSelector</By>
-		<Address>div[class='alert-message']</Address>	
-	</Element>
-	<Element id="tagAInTitleTable">
-		<By>xpath</By>
-		<Address>//table//a[normalize-space(text())='{0}']//ancestor::td//a</Address>	
-	</Element>
-	<Element id="titleHelpPage">
-		<By>cssSelector</By>
-		<Address>title</Address>	
 	</Element>
 	<Element id="btnCategory">
 		<By>xpath</By>
@@ -84,65 +68,45 @@
 		<By>xpath</By>
 		<Address>//div[@id='filter_author_id_chzn']/div//li[contains(text(),'{0}')]</Address>	
 	</Element>
-	<Element id="rowInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr</Address>	
-	</Element>
-	<Element id="icStatusInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Status')]/preceding-sibling::th)+1]//span[@class='icon-{1}']</Address>	
-	</Element>
-	<Element id="categoryInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Title')]/preceding-sibling::th)+1]//div[contains(text(),'Category')]</Address>	
-	</Element>
-	<Element id="accessInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Access')]/preceding-sibling::th)+1]</Address>	
-	</Element>
-	<Element id="authorInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Author')]/preceding-sibling::th)+1]/a</Address>	
-	</Element>
-	<Element id="idXpathInTable">
-		<By>xpath</By>
-		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'ID')]/preceding-sibling::th)+1]</Address>	
-	</Element>
-	<Element id="idInTable">
+	<Element id="linkOrderingColumn">
 		<By>cssSelector</By>
-		<Address>table>tbody>tr:nth-of-type({0})>td:last-child</Address>	
-	</Element>
-	<Element id="btnListLimit">
-		<By>cssSelector</By>
-		<Address>div[id='list_limit_chzn']>a</Address>	
-	</Element>
-	<Element id="lbListLimit">
-		<By>xpath</By>
-		<Address>//div[@id='list_limit_chzn']/div//li[contains(text(),'{0}')]</Address>	
+		<Address>a[data-original-title='Ordering']</Address>	
 	</Element>
 	<Element id="linkIDColumn">
 		<By>xpath</By>
 		<Address>//table//th[contains(.,'ID')]/a</Address>	
 	</Element>
-	<Element id="btnBackWard">
-		<By>xpath</By>
-		<Address>//ul[@class='pagination-list']//a[contains(@data-original-title,'Start')]</Address>	
-	</Element>
-	<Element id="inputListLimit">
-		<By>xpath</By>
-		<Address>//div[@id='list_limit_chzn']//input</Address>	
-	</Element>
-	<Element id="linkOrderingColumn">
+	<Element id="resultSearch">
 		<By>cssSelector</By>
-		<Address>a[data-original-title='Ordering']</Address>	
+		<Address>table>tbody>tr>td</Address>	
+	</Element>
+	<Element id="rowInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr</Address>	
 	</Element>
 	<Element id="rowArticleInTable">
 		<By>xpath</By>
 		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/preceding-sibling::tr</Address>	
 	</Element>
+	<Element id="cbArticleInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//input[@type='checkbox']</Address>	
+	</Element>
+	<Element id="icStatusInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Status')]/preceding-sibling::th)+1]//span[@class='icon-{1}']</Address>	
+	</Element>
 	<Element id="icStatusInTableWithTitle">
 		<By>xpath</By>
 		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Status')]/preceding-sibling::th)+1]/div/a[1]</Address>	
+	</Element>
+	<Element id="icPublishArticleInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//span[@class='icon-publish']</Address>	
+	</Element>
+	<Element id="icUnpublishArticleInTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr//span[@class='icon-unpublish']</Address>	
 	</Element>
 	<Element id="icStatusFeaturedInTableWithTitle">
 		<By>xpath</By>
@@ -156,9 +120,44 @@
 		<By>xpath</By>
 		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Status')]/preceding-sibling::th)+1]/div/a[2]/span[@class='icon-unfeatured']</Address>	
 	</Element>
+	<Element id="tagAInTitleTable">
+		<By>xpath</By>
+		<Address>//table//a[normalize-space(text())='{0}']//ancestor::td//a</Address>	
+	</Element>
+	<Element id="categoryInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Title')]/preceding-sibling::th)+1]//div[contains(text(),'Category')]</Address>	
+	</Element>
+	<Element id="accessInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Access')]/preceding-sibling::th)+1]</Address>	
+	</Element>
 	<Element id="accessInTableWithTitle">
 		<By>xpath</By>
 		<Address>//table//a[normalize-space(text())='{0}']//ancestor::tr/td[count(//table//th[contains(.,'Access')]/preceding-sibling::th)+1]</Address>	
 	</Element>
-
+	<Element id="authorInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'Author')]/preceding-sibling::th)+1]/a</Address>	
+	</Element>
+	<Element id="idInTable">
+		<By>cssSelector</By>
+		<Address>table>tbody>tr:nth-of-type({0})>td:last-child</Address>	
+	</Element>
+	<Element id="idXpathInTable">
+		<By>xpath</By>
+		<Address>//table/tbody/tr[{0}]/td[count(//table//th[contains(.,'ID')]/preceding-sibling::th)+1]</Address>	
+	</Element>
+	<Element id="btnBackWard">
+		<By>xpath</By>
+		<Address>//ul[@class='pagination-list']//a[contains(@data-original-title,'Start')]</Address>	
+	</Element>
+	<Element id="btnNext">
+		<By>cssSelector</By>
+		<Address>a[data-original-title='Next']</Address>	
+	</Element>
+	<Element id="titleHelpPage">
+		<By>cssSelector</By>
+		<Address>title</Address>	
+	</Element>
 </Page>

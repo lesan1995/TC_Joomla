@@ -247,7 +247,7 @@ public class BannersPage extends BasePage{
 		 * @return
 		 */
 		public boolean messageBanner(String content) {
-			return read(readElement(Elements.BannersPage.messageBanner)).contains(content);
+			return read(readElement(Elements.BannersPage.messageBanner)).equals(content);
 		}
 		/**
 		 * Check result search with content

@@ -23,25 +23,26 @@ public class BasePage extends Control {
 			element.click();
 		}
 		catch (Exception e) {
+			focus(location);
 			scrollElement();
-			element.click();
+			try {
+				element.click();
+			}
+			catch (Exception ee) {
+				clickJavacript(location);
+			}
+			
 			// TODO: handle exception
+		}
+		finally {
+			
 		}
 		
 	}
 	public void clickJavacript(By location) {
 		element=findElement(location);
-		try {
-			JavascriptExecutor executor = (JavascriptExecutor)Drivers.getInstance().driver;
-			executor.executeScript("arguments[0].click();", element);
-		}
-		catch (Exception e) {
-			scrollElement();
-			JavascriptExecutor executor = (JavascriptExecutor)Drivers.getInstance().driver;
-			executor.executeScript("arguments[0].click();", element);
-			// TODO: handle exception
-		}
-		
+		JavascriptExecutor executor = (JavascriptExecutor)Drivers.getInstance().driver;
+		executor.executeScript("arguments[0].click();", element);
 	}
 	/**
 	 * Focus to element by location
@@ -49,7 +50,15 @@ public class BasePage extends Control {
 	 */
 	public void focus(By location) {
 		element=findElement(location);
-		new Actions(Drivers.getInstance().driver).moveToElement(element).build().perform();
+		try {
+			new Actions(Drivers.getInstance().driver).moveToElement(element).build().perform();
+		}
+		catch (Exception e) {
+			JavascriptExecutor executor = (JavascriptExecutor)Drivers.getInstance().driver;
+			executor.executeScript("arguments[0].focus();", element);
+			// TODO: handle exception
+		}
+		
 	}
 	/**
 	 * UnFocus to element by location

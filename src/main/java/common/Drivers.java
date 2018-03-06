@@ -1,11 +1,14 @@
 package common;
 
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Drivers {
@@ -73,6 +76,16 @@ public class Drivers {
 		 */
 		public void pageLoad() {
 			driver.manage().timeouts().pageLoadTimeout(timeOutPageLoad, TimeUnit.SECONDS);
+			ExpectedCondition<Boolean> pageLoadCondition = new
+	                ExpectedCondition<Boolean>() {
+	                    public Boolean apply(WebDriver driver) {
+	                        return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+	                    }
+	                };
+	        wait.until(pageLoadCondition);
+	        wait.withTimeout(timeOutPageLoad,TimeUnit.SECONDS);
+	                
+			
 		}
 
 		/**
@@ -99,18 +112,6 @@ public class Drivers {
 		public void elementDisplay(int timeOut) {
 			driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 		}
-
-//		/**
-//		 * Wait with condition and timeout
-//		 * 
-//		 * @param timeOut
-//		 * @param condition
-//		 */
-//		@SuppressWarnings("unchecked")
-//		public void condition(int timeOut, Object condition) {
-//			wait.withTimeout(timeOut, TimeUnit.SECONDS);
-//			wait.until((Function<? super WebDriver,ExpectedConditions>)condition);
-//		}
 	}
 	/**
 	 * Quit driver

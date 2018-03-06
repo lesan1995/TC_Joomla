@@ -24,22 +24,18 @@ public class Control {
 	 */
 	public WebElement findElement(By location) {
 		WebElement element;
-//		if(Drivers.getInstance().browser.equals("ie")) {
-//			try {
-//				Thread.sleep(300);
-//			}
-//			catch (Exception e) {
-//				// TODO: handle exception
-//			}
-//			
-//		}
-		Drivers.getInstance().waitTo.elementDisplay();
-		//Drivers.getInstance().waitTo.condition(Drivers.getInstance().timeOutElement, ExpectedConditions.presenceOfElementLocated(location));
-		element = Drivers.getInstance().driver.findElement(location);
-		//if(Drivers.getInstance().browser.equals("ie")) {
-//			new Actions(Drivers.getInstance().driver).moveToElement(element).build().perform();
-//			//Drivers.getInstance().waitTo.condition(Drivers.getInstance().timeOutElement, ExpectedConditions.elementToBeClickable(location));
-		//}
+		try {
+			Drivers.getInstance().waitTo.pageLoad();
+			Drivers.getInstance().waitTo.elementDisplay();
+			element = Drivers.getInstance().driver.findElement(location);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			Drivers.getInstance().waitTo.pageLoad();
+			Drivers.getInstance().waitTo.elementDisplay();
+			element = Drivers.getInstance().driver.findElement(location);
+		}
+		
 		return element;
 	}
 	/**

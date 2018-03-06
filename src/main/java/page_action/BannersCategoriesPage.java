@@ -62,7 +62,7 @@ public class BannersCategoriesPage extends BasePage{
 		 * @return
 		 */
 		public boolean messageCategory(String content) {
-			return read(readElement(Elements.BannersCategoriesPage.messageCategory)).contains(content);
+			return read(readElement(Elements.BannersCategoriesPage.messageCategory)).equals(content);
 		}
 		/**
 		 * Check result search with content
