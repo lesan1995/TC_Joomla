@@ -11,6 +11,7 @@
 	  <parameter name="timeOutPage" value="30"/>
        <classes>
 			<class name="test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information" />
+<!-- 
 			<class name="test_case.TC_JOOMLA_ARTICLE_002_Verify_user_can_edit_an_article" />
 			<class name="test_case.TC_JOOMLA_ARTICLE_003_User_can_publish_an_unpublished_article" />
 			<class name="test_case.TC_JOOMLA_ARTICLE_004_Verify_user_can_unpublish_a_published_article" />
@@ -43,7 +44,7 @@
        		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_014_Verify_that_user_cannot_create_a_new_banner_without_entering_the_name_of_the_banner"/>
        		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_015_Verify_that_user_can_change_the_quantity_of_items_displayed_in_banner_table"/>
        		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_016_Verify_that_user_can_sort_items_displayed_in_banner_table_by_ID"/>
-       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_017_Verify_that_user_can_access_Banner_clients_page_while_browsing_Banner_page"/>
+       		<class name="test_case.TC_JOOMLA_BANNERS_BANNERS_017_Verify_that_user_can_access_Banner_clients_page_while_browsing_Banner_page"/> -->
        </classes>
   </test>
 </suite>
