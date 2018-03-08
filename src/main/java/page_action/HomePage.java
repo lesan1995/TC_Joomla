@@ -44,11 +44,11 @@ public class HomePage extends BasePage {
 					focus(readElement(Elements.HomePage.menuTopLeftLV1, lv1));
 					click(readElement(Elements.HomePage.menuTopLeftLV1, lv1));
 					focus(readElement(Elements.HomePage.menuTopLeftLV2, lv2));
-					String link=Drivers.getInstance().driver.
+					String link=Drivers.getInstance().getDriver().
 							findElement(readElement(Elements.HomePage.menuTopLeftLV3Link, lv1,lv2,lv3))
 							.getAttribute("href");
 					Drivers.getInstance().waitTo.pageLoad();
-					Drivers.getInstance().driver.get(link);
+					Drivers.getInstance().getDriver().get(link);
 				}
 				else {
 					click(readElement(Elements.HomePage.menuTopLeftLV1, lv1));

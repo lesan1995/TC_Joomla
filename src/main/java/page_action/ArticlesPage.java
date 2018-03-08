@@ -396,7 +396,7 @@ public class ArticlesPage extends BasePage{
 				}
 			}
 			Drivers.getInstance().waitTo.pageLoad();
-			boolean result=Drivers.getInstance().driver.getTitle().contains("Joomla! Help Screens");
+			boolean result=Drivers.getInstance().getDriver().getTitle().contains("Joomla! Help Screens");
 			swithTo.Default();
 			return result;
 		}

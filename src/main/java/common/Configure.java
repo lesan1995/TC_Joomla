@@ -42,14 +42,14 @@ public class Configure {
 	 */
 	public void navigateToUrl(String url) {
 		Drivers.getInstance().waitTo.pageLoad();
-		Drivers.getInstance().driver.get(url);
+		Drivers.getInstance().getDriver().get(url);
 	}
 	/**
 	 * Navigate to url default
 	 */
 	public void navigateToUrl() {
 		Drivers.getInstance().waitTo.pageLoad();
-		Drivers.getInstance().driver.get(Configure.url);
+		Drivers.getInstance().getDriver().get(Configure.url);
 	}
 	/**
 	 * Close Browser

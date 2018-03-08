@@ -83,7 +83,7 @@ public class BannersClientsPage extends BasePage{
 		 * @return
 		 */
 		public boolean pageClientShow(String title) {
-			return Drivers.getInstance().driver.getTitle().equals(title);
+			return Drivers.getInstance().getDriver().getTitle().equals(title);
 		}
 	}
 }

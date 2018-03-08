@@ -189,7 +189,7 @@ public class BannersNewPage extends BasePage{
 		 * @return
 		 */
 		public boolean pageEditShow(String title) {
-			return Drivers.getInstance().driver.getTitle().equals(title);
+			return Drivers.getInstance().getDriver().getTitle().equals(title);
 		}
 		/**
 		 * Check message article saved
@@ -220,7 +220,7 @@ public class BannersNewPage extends BasePage{
 				}
 				Drivers.getInstance().waitTo.pageLoad();
 			}
-			boolean result=Drivers.getInstance().driver.getTitle().contains("Joomla! Help Screens");
+			boolean result=Drivers.getInstance().getDriver().getTitle().contains("Joomla! Help Screens");
 			swithTo.Default();
 			return result;
 		}

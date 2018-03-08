@@ -27,13 +27,13 @@ public class Control {
 		try {
 			Drivers.getInstance().waitTo.pageLoad();
 			Drivers.getInstance().waitTo.elementDisplay();
-			element = Drivers.getInstance().driver.findElement(location);
+			element = Drivers.getInstance().getDriver().findElement(location);
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 			Drivers.getInstance().waitTo.pageLoad();
 			Drivers.getInstance().waitTo.elementDisplay();
-			element = Drivers.getInstance().driver.findElement(location);
+			element = Drivers.getInstance().getDriver().findElement(location);
 		}
 		
 		return element;

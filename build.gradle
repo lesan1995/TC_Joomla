@@ -70,4 +70,14 @@ task ie(type: Test) {
         logger.lifecycle(event.message )
      }
 }
+task all(type: Test) {
+	useTestNG() {
+        suites 'src/test/java/test_run/testng.xml'
+    }
+    maxParallelForks=1
+    onOutput { descriptor, event ->
+        logger.lifecycle(event.message )
+     }
+}
+
 
