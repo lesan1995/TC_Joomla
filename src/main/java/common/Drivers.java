@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -46,7 +47,7 @@ public class Drivers {
 		this.timeOutPageLoad=timeOutPageLoad;
 		switch (browser) {
 		case "ie":
-			String NodeIE= "http://192.168.190.133:5555/wd/hub";
+			String NodeIE= "http://192.168.188.150:4444/wd/hub";
 	 		DesiredCapabilities capIE = new DesiredCapabilities();
 	 		capIE.setBrowserName("internet explorer");
 	 		try {
@@ -58,10 +59,10 @@ public class Drivers {
 	 		waitIE = new WebDriverWait(getDriver(), 30);
 			break;
 		case "firefox":
-	 		//String NodeFirefox = "http://192.168.191.228:5555/wd/hub";
-	 		String NodeFirefox = "http://192.168.190.133:5555/wd/hub";
+	 		String NodeFirefox = "http://192.168.188.150:4444/wd/hub";
 	 		DesiredCapabilities capFirefox = new DesiredCapabilities();
 	 		capFirefox.setBrowserName("firefox");
+	 		capFirefox.setPlatform(Platform.VISTA);
 	 		capFirefox.setCapability("marionette", false);
 	 		try {
 	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
@@ -72,7 +73,7 @@ public class Drivers {
 	 		waitFirefox = new WebDriverWait(getDriver(), 30);
 			break;
 		default:
-			String NodeChrome = "http://192.168.190.133:5555/wd/hub";
+			String NodeChrome = "http://192.168.188.150:4444/wd/hub";
 	 		DesiredCapabilities capChrome = new DesiredCapabilities();
 	 		capChrome.setBrowserName("chrome");
 	 		try {

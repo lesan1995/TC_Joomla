@@ -5,18 +5,18 @@
       "browserName": "firefox",
       "marionette": true,
       "maxInstances": 5,
-      "seleniumProtocol": "Selenium"
+      "seleniumProtocol": "WebDriver"
     },
     {
       "browserName": "chrome",
       "maxInstances": 5,
-      "seleniumProtocol": "Selenium"
+      "seleniumProtocol": "WebDriver"
     },
     {
       "browserName": "internet explorer",
       "platform": "WINDOWS",
       "maxInstances": 1,
-      "seleniumProtocol": "Selenium"
+      "seleniumProtocol": "WebDriver"
     }
   ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
