@@ -39,7 +39,7 @@ public class ArticlesNewPage extends BasePage {
 		 * @param item
 		 */
 		public void listBoxCategory(String item) {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesNewPage.lbCategory,item));
 			click(readElement(Elements.ArticlesNewPage.lbCategory,item));
 		}
@@ -67,7 +67,7 @@ public class ArticlesNewPage extends BasePage {
 		 * @param item
 		 */
 		public void listBoxStatus(String item) {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesNewPage.lbStatus,item));
 			click(readElement(Elements.ArticlesNewPage.lbStatus,item));
 		}
@@ -82,7 +82,7 @@ public class ArticlesNewPage extends BasePage {
 		 * @param item
 		 */
 		public void listBoxAccess(String item) {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesNewPage.lbAccess,item));
 			click(readElement(Elements.ArticlesNewPage.lbAccess,item));
 		}
@@ -176,7 +176,7 @@ public class ArticlesNewPage extends BasePage {
 		 * @param name
 		 */
 		public void tbCategory(String name) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.ArticlesNewPage.tbCategory));
 			type(readElement(Elements.ArticlesNewPage.tbCategory), name);
 		}

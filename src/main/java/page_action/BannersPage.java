@@ -39,7 +39,7 @@ public class BannersPage extends BasePage{
 		 * Click button new
 		 */
 		public void buttonUnpublish() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.BannersPage.toolBar,Elements.BannersPage.btnUnpublish));
 			click(readElement(Elements.BannersPage.toolBar,Elements.BannersPage.btnUnpublish));
 		}
@@ -71,7 +71,7 @@ public class BannersPage extends BasePage{
 		 * Click button search
 		 */
 		public void buttonSearch() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.BannersPage.btnSearch));
 			click(readElement(Elements.BannersPage.btnSearch));
 		}
@@ -134,7 +134,7 @@ public class BannersPage extends BasePage{
 		 * @param item
 		 */
 		public void listBoxStatus(String item) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersPage.lbStatus,item));
 			click(readElement(Elements.BannersPage.lbStatus,item));
 		}
@@ -174,7 +174,7 @@ public class BannersPage extends BasePage{
 		 * Click to link ID in header of table
 		 */
 		public void linkIDColumn() {
-			if(Drivers.getInstance().browser.equals("ie")) scrollToTop();
+			if(Drivers.getInstance().getBrowser().equals("ie")) scrollToTop();
 			isElementDisplay(readElement(Elements.BannersPage.linkIDColumn));
 			click(readElement(Elements.BannersPage.linkIDColumn));
 		}
@@ -199,7 +199,7 @@ public class BannersPage extends BasePage{
 		 * @param name
 		 */
 		public void tbClient(String name) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersPage.tbClient));
 			type(readElement(Elements.BannersPage.tbClient), name);
 		}
@@ -215,7 +215,7 @@ public class BannersPage extends BasePage{
 		 * @param name
 		 */
 		public void tbCategory(String name) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersPage.tbCategory));
 			type(readElement(Elements.BannersPage.tbCategory), name);
 		}
@@ -373,7 +373,7 @@ public class BannersPage extends BasePage{
 		 */
 		public boolean titleHelpPage() {
 			swithTo.popUp();
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {
@@ -423,7 +423,7 @@ public class BannersPage extends BasePage{
 		}
 		public boolean numRowInTable(String row) {
 			boolean result=true;
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {
@@ -476,7 +476,7 @@ public class BannersPage extends BasePage{
 			int numRowPrev=-1;
 			int numRow=-1;
 			if(ascending) selectItemListLimit("All");
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {

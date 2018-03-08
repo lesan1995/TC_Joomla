@@ -40,7 +40,7 @@ public class HomePage extends BasePage {
 				String lv1=menu.split(">")[0];
 				String lv2=menu.split(">")[1];
 				String lv3=menu.split(">")[2];
-				if(Drivers.getInstance().browser.equals("ie")) {
+				if(Drivers.getInstance().getBrowser().equals("ie")) {
 					focus(readElement(Elements.HomePage.menuTopLeftLV1, lv1));
 					click(readElement(Elements.HomePage.menuTopLeftLV1, lv1));
 					focus(readElement(Elements.HomePage.menuTopLeftLV2, lv2));

@@ -38,7 +38,7 @@ public class ArticlesPage extends BasePage{
 		 * Click button search
 		 */
 		public void buttonSearch() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesPage.btnSearch));
 			click(readElement(Elements.ArticlesPage.btnSearch));
 		}
@@ -65,7 +65,7 @@ public class ArticlesPage extends BasePage{
 		 * Click button edit article
 		 */
 		public void buttonEdit() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnEdit));
 			click(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnEdit));
 		}
@@ -73,7 +73,7 @@ public class ArticlesPage extends BasePage{
 		 * Click button clear input search
 		 */
 		public void buttonClear() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesPage.btnClear));
 			click(readElement(Elements.ArticlesPage.btnClear));
 		}
@@ -81,7 +81,7 @@ public class ArticlesPage extends BasePage{
 		 * Click button public article
 		 */
 		public void buttonPublic() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnPublish));
 			click(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnPublish));
 		}
@@ -89,7 +89,7 @@ public class ArticlesPage extends BasePage{
 		 * Click button unpublic article
 		 */
 		public void buttonUnpublic() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnUnpublish));
 			click(readElement(Elements.ArticlesPage.toolBar,Elements.ArticlesPage.btnUnpublish));
 		}
@@ -208,7 +208,7 @@ public class ArticlesPage extends BasePage{
 		 * Click to link ID in header of table
 		 */
 		public void linkIDColumn() {
-			if(Drivers.getInstance().browser.equals("ie")) scrollToTop();
+			if(Drivers.getInstance().getBrowser().equals("ie")) scrollToTop();
 			isElementDisplay(readElement(Elements.ArticlesPage.linkIDColumn));
 			click(readElement(Elements.ArticlesPage.linkIDColumn));
 		}
@@ -244,7 +244,7 @@ public class ArticlesPage extends BasePage{
 		 * 
 		 */
 		public void icStatusFeaturedInTableWithTitle(String title) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.ArticlesPage.icStatusFeaturedInTableWithTitle,title));
 			click(readElement(Elements.ArticlesPage.icStatusFeaturedInTableWithTitle,title));
 		}
@@ -387,7 +387,7 @@ public class ArticlesPage extends BasePage{
 		 */
 		public boolean titleHelpPage() {
 			swithTo.popUp();
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {
@@ -479,7 +479,7 @@ public class ArticlesPage extends BasePage{
 			int numRowPrev=-1;
 			int numRow=-1;
 			if(ascending) selectItemListLimit("All");
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {
@@ -512,7 +512,7 @@ public class ArticlesPage extends BasePage{
 		public boolean numRowInTable(String row) {
 			boolean result=true;
 			
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {

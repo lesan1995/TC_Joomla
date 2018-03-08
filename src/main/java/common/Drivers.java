@@ -6,18 +6,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Drivers {
-	public String browser;
-	public WebDriver driver;
-	public WebDriverWait wait;
+	public WebDriverWait waitChrome;
+	public WebDriverWait waitFirefox;
+	public WebDriverWait waitIE;
 	private static Drivers drivers=null;
 	public int timeOutElement;
 	public int timeOutPageLoad;
@@ -45,65 +42,50 @@ public class Drivers {
 
 
 	public void setUp(String browser,int timeOutElement,int timeOutPageLoad) {
-		
 		this.timeOutElement=timeOutElement;
 		this.timeOutPageLoad=timeOutPageLoad;
-		this.browser=browser;
 		switch (browser) {
 		case "ie":
-//			System.setProperty("webdriver.ie.driver","./drive/IEDriverServer.exe");
-//			DesiredCapabilities capss = new DesiredCapabilities();
-//			capss.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false); // to disable marionette, by default true
-//			capss.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "http://www.bing.com/");
-//			driver = new InternetExplorerDriver(capss);
 			String NodeIE= "http://192.168.190.133:5555/wd/hub";
 	 		DesiredCapabilities capIE = new DesiredCapabilities();
+	 		capIE.setBrowserName("internet explorer");
 	 		try {
-				driver = new RemoteWebDriver(new URL(NodeIE), capIE);
+	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
+	            threadLocal.set(new RemoteWebDriver(new URL(NodeIE), capIE));
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	 		waitIE = new WebDriverWait(getDriver(), 30);
 			break;
 		case "firefox":
-//			 System.setProperty("webdriver.gecko.driver","./drive/geckodriver.exe");
-//			 DesiredCapabilities caps = new DesiredCapabilities();
-//			 caps.setCapability("marionette", false); // to disable marionette, by default true
-//			 driver = new FirefoxDriver(caps); // to disable marionette, by default truebreak;
-	 		String Node = "http://192.168.191.228:5555/wd/hub";
-	 		DesiredCapabilities caps = new DesiredCapabilities();
-	 		caps.setBrowserName("firefox");
-	 		caps.setCapability("marionette", false);
+	 		//String NodeFirefox = "http://192.168.191.228:5555/wd/hub";
+	 		String NodeFirefox = "http://192.168.190.133:5555/wd/hub";
+	 		DesiredCapabilities capFirefox = new DesiredCapabilities();
+	 		capFirefox.setBrowserName("firefox");
+	 		capFirefox.setCapability("marionette", false);
 	 		try {
-				//driver = new RemoteWebDriver(new URL(Node), caps);
 	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
-	            threadLocal.set(new RemoteWebDriver(new URL(Node), caps));
+	            threadLocal.set(new RemoteWebDriver(new URL(NodeFirefox), capFirefox));
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	 		waitFirefox = new WebDriverWait(getDriver(), 30);
 			break;
 		default:
-//			System.setProperty("webdriver.chrome.driver","./drive/chromedriver.exe");
-//			driver = new ChromeDriver();
 			String NodeChrome = "http://192.168.190.133:5555/wd/hub";
 	 		DesiredCapabilities capChrome = new DesiredCapabilities();
 	 		capChrome.setBrowserName("chrome");
 	 		try {
-				//driver = new RemoteWebDriver(new URL(NodeChrome), capChrome);
 	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
 	            threadLocal.set(new RemoteWebDriver(new URL(NodeChrome), capChrome));
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.browser="chrome";
+	 		waitChrome = new WebDriverWait(getDriver(), 30);
 			break;
 			
 		}
-		
-		wait = new WebDriverWait(getDriver(), 30);
-		getDriver().manage().window().maximize();;
+		getDriver().manage().window().maximize();
 
 	}
 	public class wait{
@@ -118,8 +100,8 @@ public class Drivers {
 	                        return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
 	                    }
 	                };
-	        wait.until(pageLoadCondition);
-	        wait.withTimeout(timeOutPageLoad,TimeUnit.SECONDS);
+	       getWait().until(pageLoadCondition);
+	       getWait().withTimeout(timeOutPageLoad,TimeUnit.SECONDS);
 	                
 			
 		}
@@ -152,12 +134,22 @@ public class Drivers {
 	public WebDriver getDriver() {
 	        return threadLocal.get();
 	 }
+	public WebDriverWait getWait() {
+		switch(getBrowser()) {
+			case "ie": return waitIE;
+			case "firefox": return waitFirefox;
+			default : return waitChrome;
+		}
+ }
+	public String getBrowser() {
+		if(threadLocal.get().getCapabilities().getBrowserName().equals("internet explorer"))
+			return "ie";
+        return threadLocal.get().getCapabilities().getBrowserName();
+ }
 	/**
 	 * Quit driver
 	 */
 	public void quit() {
-		//driver.close();
-		//driver.quit();
 		getDriver().quit();
 	}
 	

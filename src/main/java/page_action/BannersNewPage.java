@@ -57,7 +57,7 @@ public class BannersNewPage extends BasePage{
 		 * Click to button cancel
 		 */
 		public void buttonCancel() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				focus(readElement(Elements.BannersCategoriesPage.toolBar,Elements.BannersNewPage.btnCancel));
 			click(readElement(Elements.BannersCategoriesPage.toolBar,Elements.BannersNewPage.btnCancel));
 		}
@@ -71,7 +71,7 @@ public class BannersNewPage extends BasePage{
 		 * Click button category
 		 */
 		public void buttonCategory() {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersNewPage.btnCategory));
 			click(readElement(Elements.BannersNewPage.btnCategory));
 		}
@@ -120,7 +120,7 @@ public class BannersNewPage extends BasePage{
 		 * @param item
 		 */
 		public void listBoxStatus(String item) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersNewPage.lbStatus,item));
 			click(readElement(Elements.BannersNewPage.lbStatus,item));
 		}
@@ -139,7 +139,7 @@ public class BannersNewPage extends BasePage{
 		 * @param name
 		 */
 		public void tbClient(String name) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersNewPage.tbClient));
 			type(readElement(Elements.BannersNewPage.tbClient), name);
 		}
@@ -155,7 +155,7 @@ public class BannersNewPage extends BasePage{
 		 * @param name
 		 */
 		public void tbCategory(String name) {
-			if(Drivers.getInstance().browser.equals("ie")) 
+			if(Drivers.getInstance().getBrowser().equals("ie")) 
 				focus(readElement(Elements.BannersNewPage.tbCategory));
 			type(readElement(Elements.BannersNewPage.tbCategory), name);
 		}
@@ -211,7 +211,7 @@ public class BannersNewPage extends BasePage{
 		 */
 		public boolean titleHelpPage() {
 			swithTo.popUp();
-			if(Drivers.getInstance().browser.equals("ie")) {
+			if(Drivers.getInstance().getBrowser().equals("ie")) {
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {

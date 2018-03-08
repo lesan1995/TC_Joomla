@@ -194,7 +194,7 @@ public class BasePage extends Control {
 		 * @return
 		 */
 		public Switch popUp() {
-			if(Drivers.getInstance().browser.equals("ie"))
+			if(Drivers.getInstance().getBrowser().equals("ie"))
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {
