@@ -1,1 +1,1 @@
-java -jar selenium-server-standalone-3.8.0.jar -role node -nodeConfig ConfigNode.json
+java -jar selenium-server-standalone-3.10.0.jar -role node -nodeConfig ConfigNode.json 

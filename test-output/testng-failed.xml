@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+<suite thread-count="-1" name="Failed suite [SuitJoomlaFirefox]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="common.Listener"/>
+  </listeners>
+  <test name="TestFirefox(failed)">
+    <parameter name="timeOutElement" value="5"/>
+    <parameter name="timeOutPage" value="30"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="http://192.168.188.150/joomla/administrator/"/>
     <classes>
       <class name="test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information">
         <methods>
@@ -11,5 +18,5 @@
         </methods>
       </class> <!-- test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TestFirefox(failed) -->
+</suite> <!-- Failed suite [SuitJoomlaFirefox] -->

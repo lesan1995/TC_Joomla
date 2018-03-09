@@ -47,7 +47,7 @@ task chrome(type: Test) {
 	useTestNG() {
         suites 'src/test/java/test_run/testng_chrome.xml'
     }
-    maxParallelForks=1
+    maxParallelForks=2
     onOutput { descriptor, event ->
         logger.lifecycle(event.message )
      }

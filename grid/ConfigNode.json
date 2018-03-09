@@ -3,6 +3,7 @@
   [
     {
       "browserName": "firefox",
+	  "platform": "WINDOWS",
       "marionette": true,
       "maxInstances": 5,
       "seleniumProtocol": "WebDriver"
@@ -10,11 +11,14 @@
     {
       "browserName": "chrome",
       "maxInstances": 5,
+	  "platform": "WINDOWS",
+	  "marionette": true,
       "seleniumProtocol": "WebDriver"
     },
     {
       "browserName": "internet explorer",
       "platform": "WINDOWS",
+	  "marionette": true,
       "maxInstances": 1,
       "seleniumProtocol": "WebDriver"
     }

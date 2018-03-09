@@ -1,5 +1,6 @@
 package common;
 
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -7,20 +8,21 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class Drivers {
-	public WebDriverWait waitChrome;
-	public WebDriverWait waitFirefox;
-	public WebDriverWait waitIE;
+	public WebDriverWait wait;
+	public WebDriver driver;
+	public String browser;
 	private static Drivers drivers=null;
 	public int timeOutElement;
 	public int timeOutPageLoad;
 	public wait waitTo;
-	protected ThreadLocal<RemoteWebDriver> threadLocal = null;
 	private Drivers() {
 	}
 	public static Drivers getInstance() {
@@ -44,48 +46,48 @@ public class Drivers {
 
 	public void setUp(String browser,int timeOutElement,int timeOutPageLoad) {
 		this.timeOutElement=timeOutElement;
-		this.timeOutPageLoad=timeOutPageLoad;
+		this.timeOutPageLoad=timeOutPageLoad;	
 		switch (browser) {
 		case "ie":
 			String NodeIE= "http://192.168.188.150:4444/wd/hub";
 	 		DesiredCapabilities capIE = new DesiredCapabilities();
 	 		capIE.setBrowserName("internet explorer");
+	 		capIE.setPlatform(Platform.WINDOWS);
 	 		try {
-	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
-	            threadLocal.set(new RemoteWebDriver(new URL(NodeIE), capIE));
+	 			driver=new RemoteWebDriver(new URL(NodeIE), capIE);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
-	 		waitIE = new WebDriverWait(getDriver(), 30);
+	 		wait = new WebDriverWait(getDriver(), 30);
 			break;
 		case "firefox":
 	 		String NodeFirefox = "http://192.168.188.150:4444/wd/hub";
 	 		DesiredCapabilities capFirefox = new DesiredCapabilities();
 	 		capFirefox.setBrowserName("firefox");
-	 		capFirefox.setPlatform(Platform.VISTA);
-	 		capFirefox.setCapability("marionette", false);
+	 		capFirefox.setPlatform(Platform.WINDOWS);
 	 		try {
-	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
-	            threadLocal.set(new RemoteWebDriver(new URL(NodeFirefox), capFirefox));
+	 			driver=new RemoteWebDriver(new URL(NodeFirefox), capFirefox);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
-	 		waitFirefox = new WebDriverWait(getDriver(), 30);
+	 		wait = new WebDriverWait(getDriver(), 30);
 			break;
 		default:
-			String NodeChrome = "http://192.168.188.150:4444/wd/hub";
-	 		DesiredCapabilities capChrome = new DesiredCapabilities();
-	 		capChrome.setBrowserName("chrome");
+			String NodeChrome = "http://localhost:4444/wd/hub";
+			DesiredCapabilities capChrome= new DesiredCapabilities();
+			capChrome.setBrowserName("chrome");
+			capChrome.setPlatform(Platform.WINDOWS);
 	 		try {
-	 			threadLocal = new ThreadLocal<RemoteWebDriver>();
-	            threadLocal.set(new RemoteWebDriver(new URL(NodeChrome), capChrome));
+	 			driver=new RemoteWebDriver(new URL(NodeChrome), capChrome);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
-	 		waitChrome = new WebDriverWait(getDriver(), 30);
+	 		wait = new WebDriverWait(getDriver(), 30);
+	 		browser="chrome";
 			break;
 			
 		}
+		this.browser=browser;
 		getDriver().manage().window().maximize();
 
 	}
@@ -133,20 +135,14 @@ public class Drivers {
 		}
 	}
 	public WebDriver getDriver() {
-	        return threadLocal.get();
+	        return driver;
 	 }
 	public WebDriverWait getWait() {
-		switch(getBrowser()) {
-			case "ie": return waitIE;
-			case "firefox": return waitFirefox;
-			default : return waitChrome;
-		}
- }
+		return wait;
+	}
 	public String getBrowser() {
-		if(threadLocal.get().getCapabilities().getBrowserName().equals("internet explorer"))
-			return "ie";
-        return threadLocal.get().getCapabilities().getBrowserName();
- }
+		return this.browser;
+	}
 	/**
 	 * Quit driver
 	 */

@@ -11,8 +11,6 @@
 	  <parameter name="timeOutPage" value="30"/>
        <classes>
        		<class name="test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information" />
-       		<class name="test_case.TC_JOOMLA_ARTICLE_002_Verify_user_can_edit_an_article" />
-			<class name="test_case.TC_JOOMLA_ARTICLE_003_User_can_publish_an_unpublished_article" />
 			<!-- <class name="test_case.TC_JOOMLA_ARTICLE_001_Verify_user_can_create_new_article_with_valid_information" />
 			<class name="test_case.TC_JOOMLA_ARTICLE_002_Verify_user_can_edit_an_article" />
 			<class name="test_case.TC_JOOMLA_ARTICLE_003_User_can_publish_an_unpublished_article" />
